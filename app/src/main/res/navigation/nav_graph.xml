@@ -3,7 +3,13 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@+id/loginFragment">
+
+    <fragment
+    android:id="@+id/loginFragment"
+    android:name="com.example.warmrice.Login.LoginFragment"
+    android:label="fragment_login"
+    tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/forumFragment"
@@ -30,10 +36,7 @@
         android:name="com.example.warmrice.Home.HomeFragment"
         android:label="Home"
         tools:layout="@layout/fragment_home" />
-        android:id="@+id/loginFragment"
-        android:name="com.example.warmrice.Login.LoginFragment"
-        android:label="fragment_login"
-        tools:layout="@layout/fragment_login" />
+
     <fragment
         android:id="@+id/forgetPasswordFragment"
         android:name="com.example.warmrice.Login.ForgetPasswordFragment"
