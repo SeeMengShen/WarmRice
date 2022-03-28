@@ -3,20 +3,18 @@ package com.example.warmrice
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
-import android.view.MenuItem
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.onNavDestinationSelected
 import androidx.navigation.ui.setupActionBarWithNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.warmrice.databinding.ActivityMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
-import com.google.android.material.bottomnavigation.BottomNavigationView.OnNavigationItemSelectedListener
-import com.google.android.material.navigation.NavigationBarView
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
-    private val nav by lazy { supportFragmentManager.findFragmentById(R.id.nav_host)!!.findNavController() }
+    private val nav by lazy {
+        supportFragmentManager.findFragmentById(R.id.nav_host)!!.findNavController()
+    }
     private lateinit var bottomNav: BottomNavigationView
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -24,7 +22,8 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val appBarConfiguration = AppBarConfiguration(setOf(R.id.homeFragment, R.id.accountFragment))
+        val appBarConfiguration =
+            AppBarConfiguration(setOf(R.id.homeFragment, R.id.accountFragment))
         bottomNav = binding.bottomNav
 
         setupActionBarWithNavController(nav, appBarConfiguration)
@@ -35,10 +34,10 @@ class MainActivity : AppCompatActivity() {
         return nav.navigateUp() || super.onSupportNavigateUp()
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.top_action_bar, menu)
-        return super.onCreateOptionsMenu(menu)
-    }
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.top_action_bar, menu)
+//        return super.onCreateOptionsMenu(menu)
+//    }
 
     /*
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
