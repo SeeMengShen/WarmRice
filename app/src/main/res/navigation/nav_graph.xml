@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/homeFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/homeFragment"
@@ -25,4 +25,24 @@
         android:name="com.example.warmrice.Account.AccountFragment"
         android:label="Account"
         tools:layout="@layout/fragment_account" />
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.warmrice.Login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/forgetPasswordFragment"
+        android:name="com.example.warmrice.Login.ForgetPasswordFragment"
+        android:label="fragment_forget_password"
+        tools:layout="@layout/fragment_forget_password" />
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.warmrice.Login.RegisterFragment"
+        android:label="fragment_register"
+        tools:layout="@layout/fragment_register" />
+    <fragment
+        android:id="@+id/aboutUsFragment2"
+        android:name="com.example.warmrice.AboutUs.AboutUsFragment"
+        android:label="fragment_about_us"
+        tools:layout="@layout/fragment_about_us" />
 </navigation>
