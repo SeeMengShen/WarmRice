@@ -8,4 +8,26 @@
     <string name="about_us">About Us</string>
     <string name="account">Account</string>
     <string name="search">Search</string>
+    <string name="login">Login</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="forgot_password">Forgot Password?</string>
+    <string name="dont_have_an_account">Don\'t have an account?</string>
+    <string name="forget_password">Forget Password</string>
+    <string name="send_reset_password_email">Send Reset Password Email</string>
+    <string name="register">Register</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="create_account">Create Account</string>
+    <string name="organization">Organization</string>
+    <string name="location">Location</string>
+    <string name="contact_us">Contact Us</string>
+    <string name="organization_Desc">Warm Rice is an organization where we focus more on the Hunger and Poverty problem in Malaysia. This organization was created in 2005 and has been serving people ever since.\n\nWith the ever so growing team of the Warm Rice organization, the founder has hired some app developers to create an app for the public to use. This app can be used to request for help or help other people in need.\n\nThe app developers by the Rice Sender:</string>
+    <string name="organization_bulleted_list">&#8226; See Meng Shen\n&#8226; Khong Han Xiang\n&#8226; Calvin Mok Chun Kit</string>
+    <string name="location_Desc">You could send any good to this location below: \n\nKampus Utama, Jalan Genting Kelang, \n53300 Kuala Lumpur\nPersekutuan Kuala Lumpur</string>
+    <string name="contactUs_Desc">Have any questions or inquiry you want us to answer? Contact us with the details below.</string>
+    <string name="contactUs_bulleted_list">&#8226; Phone Number: +60 12 3456 789\n&#8226; Email: warmrice@gmail.com</string>
+    <string name="name">Name</string>
+    <string name="message">Message</string>
+    <string name="submit">Submit</string>
+
 </resources>

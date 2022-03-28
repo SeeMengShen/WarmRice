@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "982543455501",
+    "project_id": "warm-rice",
+    "storage_bucket": "warm-rice.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982543455501:android:3b8bd24caa50b36bf0cc44",
+        "android_client_info": {
+          "package_name": "com.example.warmrice"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982543455501-auv8k51danhjn030gtai93ajkarmi4d8.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDcOLH4Ih0dv8p8nGcTTFCA4Sd1M8tIzOk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "982543455501-auv8k51danhjn030gtai93ajkarmi4d8.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
