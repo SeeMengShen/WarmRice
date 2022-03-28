@@ -8,6 +8,7 @@
     <string name="about_us">About Us</string>
     <string name="account">Account</string>
     <string name="search">Search</string>
+    <string name="settings">settings</string>
     <string name="login">Login</string>
     <string name="email">Email</string>
     <string name="password">Password</string>
@@ -29,5 +30,4 @@
     <string name="name">Name</string>
     <string name="message">Message</string>
     <string name="submit">Submit</string>
-
 </resources>
