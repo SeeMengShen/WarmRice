@@ -30,4 +30,27 @@
     <string name="name">Name</string>
     <string name="message">Message</string>
     <string name="submit">Submit</string>
+
+    //fragment_post - Header
+    <string name="add_post_header"><u>Post Something</u></string>
+
+    //fragment_post - Title
+    <string name="post_title_header">Title</string>
+    <string name="hint_post_title"><i>Enter title</i></string>
+
+    //fragment_post - Content
+    <string name="post_content_header">Content</string>
+    <string name="hint_post_content"><i>What\'s on your mind?</i></string>
+
+    //fragment_post - Upload Photo
+    <string name="upload_photo_header">Upload Photo</string>
+
+    //fragment_post - Post
+    <string name="post_header">Post</string>
+
+    //fragment_post - Display toast
+    <string name="post_data_added">Add Post Successfully.</string>
+
+    //fragment_post - Display required keyword
+    <string name="required_keyword"><i>Required *</i></string>
 </resources>

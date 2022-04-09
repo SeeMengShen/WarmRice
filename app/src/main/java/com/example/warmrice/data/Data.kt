@@ -35,3 +35,11 @@ data class Donation(
     var donationAmount: Double = 0.0,
     var donationDate: Date = Date()
 )
+
+data class AddPost(
+    @DocumentId
+    var addPostTitle : String = "",
+    var addPostContent : String = "",
+    var addPostUploadPhoto: Blob = Blob.fromBytes(ByteArray(0)),
+    var addPostDate : Date = Date()
+)

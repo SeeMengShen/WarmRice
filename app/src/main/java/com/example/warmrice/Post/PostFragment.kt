@@ -1,60 +1,101 @@
 package com.example.warmrice.Post
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.fragment.app.activityViewModels
+import androidx.navigation.fragment.findNavController
 import com.example.warmrice.R
+import com.example.warmrice.data.AddPost
+import com.example.warmrice.data.AddPostViewModel
+import com.example.warmrice.databinding.FragmentPostBinding
+import com.example.warmrice.util.cropToBlob
+import com.google.firebase.firestore.FirebaseFirestore
+import java.util.*
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
+class PostFragment: Fragment() {
 
-/**
- * A simple [Fragment] subclass.
- * Use the [PostFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
-class PostFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    private lateinit var binding: FragmentPostBinding
+    private val nav by lazy { findNavController() }
+    private val addPVM: AddPostViewModel by activityViewModels()
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+
+    companion object {
+        val IMAGE_REQUEST_CODE = 100
+    }
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+        binding = FragmentPostBinding.inflate(inflater, container, false)
+
+        binding.uploadPhoto.setOnClickListener { uploadPhoto() }
+        binding.postButton.setOnClickListener { addPost() }
+
+        return binding.root
+    }
+
+
+    //UPLOAD PHOTO
+    private fun uploadPhoto() {
+        val intent = Intent(Intent.ACTION_PICK)
+        intent.setType("image/*")
+        startActivityForResult(intent, IMAGE_REQUEST_CODE)
+
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == IMAGE_REQUEST_CODE && resultCode == Activity.RESULT_OK) {
+            binding.postImageView.setImageURI(data?.data)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_post, container, false)
+
+    //ADD POST
+    private fun addPost() {
+
+        //DETAILS OF USER INPUT
+        val addPostDetails = AddPost(
+            addPostTitle = binding.postTitleInput.getText().toString().trim(),
+            addPostContent = binding.postContentInput.getText().toString().trim(),
+            addPostUploadPhoto = binding.postImageView.cropToBlob(300, 300)
+        )
+
+
+        val addPostDatabase = FirebaseFirestore.getInstance()
+        val addPostDetail: MutableMap<String, Any> = HashMap()
+        addPostDetail["addPostTitle"] = binding.postTitleInput.getText().toString().trim()
+        addPostDetail["addPostContent"] = binding.postContentInput.getText().toString().trim()
+        addPostDetail["addPostUploadPhoto"] = binding.postImageView.cropToBlob(300, 300)
+        addPostDetail["addPostData"] = Calendar.getInstance().time
+
+        //IF NO ERROR, ADDED TO FIRESTORE WITH THE GENERATED ID OTHERWISE DISPLAY ERROR MESSAGE
+        val errorPostSomething = addPVM.validateAddPost(addPostDetails)
+        if (errorPostSomething != "")
+        {
+            toastAddPost(errorPostSomething)
+        }
+        else {
+            addPostDatabase.collection("add_post")
+                .add(addPostDetail)
+                .addOnSuccessListener {
+                    toastAddPost(getString(R.string.post_data_added))
+                }
+        }
+
+
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment PostFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            PostFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
+
+    //DISPLAY TOAST IF POST IS ADDED SUCCESSFULLY
+    private fun toastAddPost(text: String)
+    {
+        Toast.makeText(context, text, Toast.LENGTH_LONG).show()
+
     }
+
 }
