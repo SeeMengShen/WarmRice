@@ -4,15 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Login.RegisterFragment"
-    android:background="@color/purple_B995EF">
+    android:background="@color/purple_B995EF"
+    tools:context=".Login.RegisterFragment">
 
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="100dp"
+        android:layout_marginEnd="16dp"
         android:text="@string/register"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
@@ -24,9 +26,11 @@
 
     <EditText
         android:id="@+id/regEmail"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="30dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/textview_border"
         android:ems="10"
         android:hint="@string/email"
@@ -43,9 +47,11 @@
 
     <EditText
         android:id="@+id/regPassword"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/textview_border"
         android:ems="10"
         android:hint="@string/password"
@@ -62,9 +68,11 @@
 
     <EditText
         android:id="@+id/regPasswordConfirm"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@drawable/textview_border"
         android:ems="10"
         android:hint="@string/confirm_password"

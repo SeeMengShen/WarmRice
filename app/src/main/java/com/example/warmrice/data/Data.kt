@@ -35,3 +35,10 @@ data class Donation(
     var donationAmount: Double = 0.0,
     var donationDate: Date = Date()
 )
+
+data class ContactUs(
+    @DocumentId
+    var name: String = "",
+    var email: String = "",
+    var message: String = ""
+)

@@ -3,6 +3,7 @@ package com.example.warmrice.Login
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.navigation.fragment.findNavController
+import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.warmrice.R
 import com.example.warmrice.databinding.ActivityLoginBinding
@@ -18,7 +19,8 @@ class LoginActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         //Setup Action Bar
-        setupActionBarWithNavController(nav)
+        val appBarConfiguration = AppBarConfiguration(setOf(R.id.loginFragment))
+        setupActionBarWithNavController(nav, appBarConfiguration)
     }
 
     override fun onSupportNavigateUp(): Boolean {
