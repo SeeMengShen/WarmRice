@@ -1,6 +1,9 @@
 package com.example.warmrice.data
 
 import android.app.Application
+import android.os.Debug
+import android.util.Log
+import android.util.LogPrinter
 import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -21,20 +24,38 @@ import java.net.URL
 
 class PostViewModel : ViewModel() {
 
-    private val firebasePosts = Firebase.firestore.collection("posts")
-
     companion object {
-        var posts = MutableLiveData<List<Post>>()
-    }
+        private val firebasePosts = Firebase.firestore.collection("posts")
 
-    init {
-        firebasePosts.addSnapshotListener { snap, _ ->
-            posts.value = snap?.toObjects()
+        var posts = MutableLiveData<List<Post>>()
+
+        fun updateUser(){
+            val users = UserViewModel.users
+            firebasePosts.addSnapshotListener { snap, _ ->
+                if (snap == null) return@addSnapshotListener
+
+                posts.value = snap.toObjects()
+
+                for (p in posts.value!!) {
+                    val user = users.value?.find { u -> u.userEmail == p.userEmail } ?: User()
+                    p.user = user
+                }
+            }
         }
     }
 
-    suspend fun get(postId: String): Post? {
-        return firebasePosts.document(postId).get().await().toObject<Post>()
+    init {
+//        firebasePosts.addSnapshotListener { snap, _ ->
+//            posts.value = snap?.toObjects()
+//        }
+
+        viewModelScope.launch {
+            updateUser()
+        }
+    }
+
+    fun get(postId: String): Post? {
+        return posts.value?.find { post -> post.postId == postId }
     }
 
     fun getAll() = posts
@@ -47,15 +68,13 @@ class PostViewModel : ViewModel() {
         firebasePosts.document(postId).delete()
     }
 
-    fun assignUser(posts: List<Post>) {
-        posts.forEach { post ->
-            post.user = UserViewModel.users.value?.find { user ->
-                user.userEmail == post.userEmail
-            }!!
-        }
-    }
+
+
+//    fun assignUser(posts: List<Post>) {
+//        posts.forEach { post ->
+//            post.user = UserViewModel.users.value?.find { user ->
+//                user.userEmail == post.userEmail
+//            }!!
+//        }
+//    }
 }
-
-
-
-

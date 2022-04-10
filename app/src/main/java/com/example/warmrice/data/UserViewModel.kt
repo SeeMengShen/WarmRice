@@ -1,5 +1,6 @@
 package com.example.warmrice.data
 
+import android.widget.Toast
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.firebase.firestore.ktx.firestore
@@ -19,21 +20,36 @@ class UserViewModel : ViewModel() {
     init {
         firebaseUsers.addSnapshotListener() { snap, _ ->
             users.value = snap?.toObjects()
+            PostViewModel.updateUser()
         }
     }
 
-    suspend fun get(userEmail: String): User?{
-        return firebaseUsers.document(userEmail).get().await().toObject<User>()
+    fun get(userEmail: String): User?{
+        return users.value?.find { user -> user.userEmail == userEmail }
     }
 
     fun getAll() = users
-
-    fun set(user: User){
-        firebaseUsers.document(user.userEmail).set(user)
-    }
 
     //TODO come back afterwards
     fun delete(userEmail: String){
         firebaseUsers.document(userEmail).delete()
     }
+
+    //====================================Validation==============================================
+
+    suspend fun nameExists(name: String): Boolean{
+        return firebaseUsers.whereEqualTo("username", name).get().await().size() > 0
+    }
+
+    suspend fun validate(u: User): String{
+
+        return when {
+            u.username == "" -> "Don't leave your name blank!"
+            nameExists(u.username) -> "Username is not available."
+            else -> ""
+        }
+
+
+    }
+
 }

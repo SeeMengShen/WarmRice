@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Home.NewsDetailsFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingHorizontal="16dp"
+            android:paddingTop="16dp"
+            android:paddingBottom="64dp">
+
+            <TextView
+                android:id="@+id/newsDetailsNewsTitleView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Title"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/newsDetailsNewsDateView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date: " />
+
+            <TextView
+                android:id="@+id/newsDetailsNewsTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingTop="16dp"
+                android:text="Content: Lorem ipsum dolor sit amet, consectetur adipiscing elit. In volutpat, est eget tincidunt tristique, urna felis sodales enim, non tristique neque lectus vel enim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Integer placerat viverra egestas. Nulla sollicitudin nunc eu posuere accumsan. Nullam aliquam quis nibh vel finibus. Pellentesque vel lectus feugiat, fringilla magna eget, scelerisque purus. Aenean vitae nisi quis mi commodo pretium sed pellentesque turpis. Proin sit amet eleifend quam, et lacinia diam. Fusce pretium nunc vel accumsan suscipit. Donec sed dictum est. Sed convallis auctor odio, at tempus ligula vestibulum id. In fermentum nisi vitae mauris tempus lacinia. Proin non tempus lectus. Etiam condimentum dapibus rhoncus. Maecenas fringilla luctus elit non vulputate. Nam et blandit metus, non sagittis dui.     Maecenas sit amet justo bibendum, tempor nisl at, bibendum urna. Nam fermentum, ipsum quis commodo tincidunt, ante erat convallis nibh, ut fringilla nisl enim in lacus. Sed odio ipsum, venenatis at tellus sed, ultrices mollis ipsum. Sed ac urna sapien. Mauris vulputate faucibus magna eget posuere. Curabitur euismod malesuada maximus. Sed rutrum ullamcorper felis, id posuere mauris commodo quis."
+                android:textColor="@color/black" />
+
+            <ImageView
+                android:id="@+id/newsDetailsPhotoView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                tools:src="@tools:sample/backgrounds/scenic" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

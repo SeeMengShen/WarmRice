@@ -3,6 +3,8 @@ package com.example.warmrice
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.Menu
+import android.view.MenuItem
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupActionBarWithNavController
@@ -23,11 +25,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val appBarConfiguration =
-            AppBarConfiguration(setOf(R.id.homeFragment, R.id.accountFragment))
+            AppBarConfiguration(setOf(R.id.homeFragment, R.id.accountFragment, R.id.aboutUsFragment))
         bottomNav = binding.bottomNav
 
         setupActionBarWithNavController(nav, appBarConfiguration)
         bottomNav.setupWithNavController(nav)
+//        bottomNav.visibility = View.INVISIBLE
     }
 
     override fun onSupportNavigateUp(): Boolean {

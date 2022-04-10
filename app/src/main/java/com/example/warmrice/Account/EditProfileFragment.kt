@@ -1,60 +1,102 @@
 package com.example.warmrice.Account
 
+import android.app.Activity
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
 import com.example.warmrice.R
+import com.example.warmrice.data.CommentViewModel
+import com.example.warmrice.data.User
+import com.example.warmrice.data.UserViewModel
+import com.example.warmrice.databinding.FragmentEditProfileBinding
+import com.example.warmrice.util.cropToBlob
+import com.example.warmrice.util.toBitmap
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
+import kotlinx.coroutines.launch
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [EditProfileFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
 class EditProfileFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+    private lateinit var binding: FragmentEditProfileBinding
+    private val nav by lazy{ findNavController() }
+    private val uvm: UserViewModel by activityViewModels()
+
+    private val launcher =
+        registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {
+            if (it.resultCode == Activity.RESULT_OK) {
+                binding.previewImgView.setImageURI((it.data?.data))
+            }
         }
-    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_edit_profile, container, false)
+
+        binding = FragmentEditProfileBinding.inflate(inflater, container, false)
+
+        with(binding) {
+            selectPhotoBtn.setOnClickListener { selectImg() }
+            resetBtn.setOnClickListener{ reset() }
+            applyBtn.setOnClickListener{ updateUserInfo() }
+            //TODO reset password function
+            resetPwdBtn.setOnClickListener{ }
+        }
+
+        reset()
+
+        return binding.root
     }
 
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment EditProfileFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            EditProfileFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
+    private fun selectImg() {
+        val intent = Intent(Intent.ACTION_GET_CONTENT)
+        intent.type = "image/*"
+        launcher.launch(intent)
+    }
+
+    private fun reset(){
+//        binding.previewImgView.setImageBitmap(user.userPhoto>.toBitmap())
+//        binding.editUserame.text = user.username
+//        binding.edtBio.text = user.userBio
+    }
+
+    //TODO update user to firestore
+    private fun updateUserInfo(){
+        val firebaseUsers = Firebase.firestore.collection("users").document(/*user.userEmail*/)
+
+        val user = User(
+            //TODO set currentUserEmail
+            userEmail = "seemengshen@gmail.com",
+            username = binding.editUserame.text.toString(),
+            userBio = binding.edtBio.text.toString(),
+            userPhoto = binding.previewImgView.cropToBlob(100, 100)
+        )
+
+        //TODO info validation
+        lifecycleScope.launch {
+            val err = uvm.validate(user)
+
+            if(err != ""){
+                toast(err)
+                return@launch
             }
+
+            firebaseUsers.set(user).addOnSuccessListener {
+                nav.navigateUp()
+                toast("Updated successfully!")
+            }
+        }
+    }
+
+    private fun toast(text: String){
+        Toast.makeText(context, text, Toast.LENGTH_SHORT).show()
     }
 }

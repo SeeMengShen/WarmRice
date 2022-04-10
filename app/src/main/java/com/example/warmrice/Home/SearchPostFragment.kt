@@ -1,4 +1,4 @@
-package com.example.warmrice.Account
+package com.example.warmrice.Home
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -10,21 +10,24 @@ import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.DividerItemDecoration
 import com.example.warmrice.R
+import com.example.warmrice.data.PostSearchViewModel
 import com.example.warmrice.data.PostViewModel
-import com.example.warmrice.databinding.FragmentAccountPostsBinding
+import com.example.warmrice.databinding.FragmentSearchPostBinding
 import com.example.warmrice.util.PostAdapter
 
-class AccountPostsFragment : Fragment() {
 
-    private lateinit var binding: FragmentAccountPostsBinding
+class SearchPostFragment : Fragment() {
+
+    private lateinit var binding: FragmentSearchPostBinding
     private val nav by lazy { findNavController() }
-    private val pvm: PostViewModel by activityViewModels()
+    private val psvm: PostSearchViewModel by activityViewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentAccountPostsBinding.inflate(inflater, container, false)
+
+        binding = FragmentSearchPostBinding.inflate(inflater, container, false)
 
         val adapter = PostAdapter() { holder, post ->
             holder.root.setOnClickListener {
@@ -42,12 +45,14 @@ class AccountPostsFragment : Fragment() {
             }
         }
 
-        binding.accountPostsRv.adapter = adapter
-        binding.accountPostsRv.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
+        binding.searchPostRv.adapter = adapter
+        binding.searchPostRv.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
-        pvm.getAll().observe(viewLifecycleOwner){ posts ->
+        //TODO searching
+        psvm.getAll().observe(viewLifecycleOwner){ posts ->
 //            pvm.assignUser(posts)
             adapter.submitList(posts)
+            binding.searchPostResultCountView.text = "${posts.size} record(s)"
         }
 
         return binding.root

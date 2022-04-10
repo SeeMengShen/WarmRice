@@ -2,10 +2,12 @@ package com.example.warmrice.Login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.warmrice.R
 import com.example.warmrice.databinding.ActivityLoginBinding
+import com.example.warmrice.databinding.ActivityMainBinding
 
 class LoginActivity : AppCompatActivity() {
 
