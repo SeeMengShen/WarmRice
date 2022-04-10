@@ -24,10 +24,179 @@
     <string name="contact_us">Contact Us</string>
     <string name="organization_Desc">Warm Rice is an organization where we focus more on the Hunger and Poverty problem in Malaysia. This organization was created in 2005 and has been serving people ever since.\n\nWith the ever so growing team of the Warm Rice organization, the founder has hired some app developers to create an app for the public to use. This app can be used to request for help or help other people in need.\n\nThe app developers by the Rice Sender:</string>
     <string name="organization_bulleted_list">&#8226; See Meng Shen\n&#8226; Khong Han Xiang\n&#8226; Calvin Mok Chun Kit</string>
-    <string name="location_Desc">You could send any good to this location below: \n\nKampus Utama, Jalan Genting Kelang, \n53300 Kuala Lumpur\nPersekutuan Kuala Lumpur</string>
+    <string name="location_Desc">You could send any good to this location below:</string>
+    <string name="location_place">Kampus Utama, Jalan Genting Kelang, \n53300 Kuala Lumpur\nPersekutuan Kuala Lumpur</string>
     <string name="contactUs_Desc">Have any questions or inquiry you want us to answer? Contact us with the details below.</string>
-    <string name="contactUs_bulleted_list">&#8226; Phone Number: +60 12 3456 789\n&#8226; Email: warmrice@gmail.com</string>
+    <string name="contactUs_phoneNumber">&#8226; Phone Number: +60 12 3456 789</string>
+    <string name="contactUs_email">&#8226; Email: warmrice@gmail.com</string>
     <string name="name">Name</string>
     <string name="message">Message</string>
     <string name="submit">Submit</string>
+
+    //fragment_help_service - 3 buttons
+    <string name="registration_for_volunteer_header_option">Registration for Volunteer</string>
+    <string name="donate_header_option">Donate</string>
+    <string name="request_for_help_header_option">Request for Help</string>
+
+    //fragment_register_volunteer - Header
+    <string name="registration_detail_header"><u>Registration Detail</u></string>
+
+    //frgament_register_volunteer and fragment_request_help - Name
+    <string name="hint_name"><i>Goon Poh Teng</i></string>
+    <string name="required_keyword"><i>Required *</i></string>
+    <string name="name_header">Name</string>
+    <string name="name_validation_failed_message">Failed. Valid Name must start with a capitalized letter followed by at least 1 character.</string>
+    <string name="name_required_message">Name Required</string>
+
+    //frgament_register_volunteer and fragment_request_help - IC Number
+    <string name="identification_number_header">IC Number</string>
+    <string name="hint_identification_number"><i>040102-11-0282</i></string>
+    <string name="identification_number_validation_failed_message">Failed. Valid IC Number must follow this format (XXXXXX-XX-XXXX)</string>
+    <string name="identification_number_required_message">IC Number Required</string>
+
+    //frgament_register_volunteer and fragment_request_help - Email Address
+    <string name="email_address_header">Email Address</string>
+    <string name="hint_email_address"><i>goonpohteng@gmail.com</i></string>
+    <string name="email_address_validation_failed_message">Failed. Valid Email Address must follow the standard email address format</string>
+    <string name="email_address_required_message">Email Address Required</string>
+
+    //frgament_register_volunteer and fragment_request_help - Phone Number
+    <string name="phone_number_header">Phone Number</string>
+    <string name="hint_phone_number"><i>011-1234567</i></string>
+    <string name="phone_number_validation_failed_message">Failed. Valid Phone Number must follow this format (XXX-XXXXXXX) or (XXX-XXXXXXXX).</string>
+    <string name="phone_number_required_message">Phone Number Required</string>
+
+    //frgament_register_volunteer and fragment_request_help - Address
+    <string name="address_header">Address</string>
+    <string name="hint_address"><i>15D, Jalan Desa Jaya, Taman Desa</i></string>
+    <string name="address_required_message">Address Required</string>
+    <string name="address_not_empty_message">Failed. Address cannot be empty.</string>
+
+    //frgament_register_volunteer and fragment_request_help - State
+    <string name="state_header">State</string>
+
+    //frgament_register_volunteer and fragment_request_help - Postal / Zip Code
+    <string name="postal_or_zip_code_header">Postal / Zip Code</string>
+    <string name="hint_postal_or_zip_code"><i>80594</i></string>
+    <string name="johor_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Johor state must follow this format (80XXX - 86XXX)</string>
+    <string name="kedah_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Kedah state must follow this format (05XXX - 09XXX)</string>
+    <string name="kelantan_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Kelantan state must follow this format (15XXX - 18XXX)</string>
+    <string name="kuala_lumpur_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Kuala Lumpur state must follow this format (50XXX - 60XXX and 68XXX)</string>
+    <string name="labuan_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Labuan state must follow this format (87XXX)</string>
+    <string name="melaka_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Melaka state must follow this format (75XXX - 78XXX)</string>
+    <string name="negeri_sembilan_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Negeri Sembilan state must follow this format (70XXX - 73XXX)</string>
+    <string name="pahang_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Pahang state must follow this format (26XXX - 28XXX)</string>
+    <string name="perak_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Perak state must follow this format (30XXX - 36XXX and 39XXX)</string>
+    <string name="perlis_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Perlis state must follow this format (01XXX)</string>
+    <string name="pulau_pinang_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Pulau Pinang state must follow this format (10XXX - 14XXX)</string>
+    <string name="putrajaya_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Putrajaya state must follow this format (62XXX)</string>
+    <string name="sabah_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Sabah state must follow this format (88XXX - 91XXX)</string>
+    <string name="sarawak_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Sarawak state must follow this format (93XXX - 98XXX)</string>
+    <string name="selangor_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Selangor must follow this format (40XXX - 48XXX and 62XXX - 64XXX)</string>
+    <string name="terengganu_postal_or_zip_code_validation">Failed. Valid Postal Or Zip Code of Terengganu must follow this format (20XXX - 24XXX)</string>
+    <string name="postal_or_zip_code_required_message">Postal / Zip Code Required</string>
+
+    //frgament_register_volunteer - Reason To Volunteer
+    <string name="reason_to_volunteer_header">Reason To Volunteer</string>
+    <string name="radTo_learn_new_skills">To learn new skills</string>
+    <string name="radTo_meet_with_new_community">To meet with new community</string>
+    <string name="radTo_gain_experience_of_volunteering">To gain experience of volunteering</string>
+    <string name="radOthers">Others</string>
+    <string name="hint_others_box"><i>Write the reason at this box.</i></string>
+    <string name="radio_box_validation_message">Since you tick the others box, therefore you need to write the reason to volunteer in the box above.</string>
+    <string name="radio_box_required_message">Other Reason To Volunteer Required </string>
+
+    //frgament_register_volunteer - Reset
+    <string name="reset_button">Reset</string>
+
+    //frgament_register_volunteer - Submit
+    <string name="submit_button">Submit</string>
+
+    //fragment_register_volunteer - Display toast
+    <string name="register_volunteer_data_added">"Register Successfully. \nThank you for filling in the information. \nRecord Added Successfully."</string>
+
+    //fragment_request_help - Header
+    <string name="request_detail_header"><u>Request Detail</u></string>
+
+    //fragment_request_help - Type of Help Required
+    <string name="type_of_help_required_header">Type of Help Required</string>
+    <string name="checked_help_clothes">Clothes</string>
+    <string name="checked_help_foods">Foods</string>
+    <string name="checked_help_others">Others</string>
+    <string name="checked_box_validation_message">Since you tick the others box, therefore you need to write the type of help required in the box above.</string>
+    <string name="hint_checked_help_others_box"><i>Write at this box provided.</i></string>
+    <string name="checked_box_required_message">Other Type Of Help Required </string>
+
+    //fragment_request_help - Display toast
+    <string name="request_for_help_data_added">"Thank you for filling in the information. \nYour request will process it in 5 days."</string>
+
+    //fragment_donate - Header
+    <string name="donation_detail_header"><u>Donation Detail</u></string>
+
+    //fragment_donate - Credit / Debit Card Number
+    <string name="credit_or_debit_card_number_header">Credit / Debit Card Number</string>
+    <string name="donation_hint_card_number"><font size="37"><i>Enter card number without blank space</i></font></string>
+    <string name="donation_credit_or_debit_card_number_validation_message">Invalid Credit/Debit Card Number. Please try again.</string>
+    <string name="credit_or_debit_card_number_required_message">Credit / Debit Card Number Required</string>
+
+    //fragment_donate - CCV
+    <string name="ccv_header">CCV (3-digit)</string>
+    <string name="donation_ccv_validation_message">Invalid CCV. Please try again.</string>
+    <string name="ccv_required_message">CCV Required</string>
+
+    //fragment_donate - Valid thru
+    <string name="valid_thru_header">Valid thru</string>
+    <string name="donation_valid_thru_validation_message">Invalid Valid thru as it expires.</string>
+    <string name="donation_valid_thru_format_message">Failed. Valid thru must follow this format MM/YY.</string>
+    <string name="donation_invalid_month">Invalid Month Input</string>
+    <string name="hint_valid_thru">MM/YY</string>
+    <string name="valid_thru_required_message">Valid Thru Required</string>
+
+    //fragment_donate - Amount Donated (RM)
+    <string name="amount_donate_header">Amount Donated (RM)</string>
+    <string name="donation_ten_ringgit_header">10</string>
+    <string name="donation_twenty_ringgit_header">20</string>
+    <string name="donation_fifty_ringgit_header">50</string>
+    <string name="donation_one_hundred_ringgit_header">100</string>
+    <string name="donation_two_hundred_ringgit_header">200</string>
+    <string name="donation_other_amount_header">Other Amount</string>
+    <string name="donation_other_header">Other</string>
+    <string name="donation_others_validation_keyword"><i>Since you tick the others box, therefore you need to enter your preferred amount in the box above.</i></string>
+    <string name="hint_amount_donation"><i>Enter your preferred amount</i></string>
+    <string name="amount_donated_required_message">Amount Donated Required</string>
+
+    //fragment_donate - Leave Comment
+    <string name="comment_section_header">Comment</string>
+    <string name="leave_a_comment_header">Leave A Comment (Optional)</string>
+    <string name="comment_validation_message"><i>Since you tick the comment box, therefore you need to leave a comment on the box given.</i></string>
+    <string name="comment_required_message">Comment Required</string>
+
+    //fragment_donate - Donate
+    <string name="donate_button_header">Donate</string>
+
+    //fragment_donate - Display toast
+    <string name="donate_data_added">"Donate Successfully. \nThank you for filling in the information. \nAppreciate your help."</string>
+
+    //fragment_post - Header
+    <string name="add_post_header"><u>Post Something</u></string>
+
+    //fragment_post - Title
+    <string name="post_title_header">Title</string>
+    <string name="hint_post_title"><i>Enter title</i></string>
+
+    //fragment_post - Content
+    <string name="post_content_header">Content</string>
+    <string name="hint_post_content"><i>What\'s on your mind?</i></string>
+
+    //fragment_post - Upload Photo
+    <string name="upload_photo_header">Upload Photo</string>
+
+    //fragment_post - Post
+    <string name="post_header">Post</string>
+
+    //fragment_post - Display toast
+    <string name="post_data_added">Add Post Successfully.</string>
+
+    <string name="remember_me">Remember Me</string>
+
 </resources>

@@ -1,14 +1,376 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DonateFragment">
+    android:fillViewport="true"
+    tools:context=".HelpService.DonateFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/light_orange_75FFEB3B"
+        tools:context=".HelpService.DonateFragment">
 
-</FrameLayout>
+
+        //DONATION DETAIL
+        <TextView
+            android:id="@+id/donationDetail"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="@string/donation_detail_header"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        //CREDIT / DEBIT CARD NUMBER
+        <TextView
+            android:id="@+id/creditOrDebitCardNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/credit_or_debit_card_number_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/donationDetail" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/creditOrDebitCardNumberInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_credit_card_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/creditOrDebitCardNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/creditOrDebitCardNumberInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:textStyle="bold"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="textPassword"
+                android:hint="@string/donation_hint_card_number"
+                android:textColorHint="@color/grey_616161" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //CCV
+        <TextView
+            android:id="@+id/ccv"
+            android:layout_width="110dp"
+            android:layout_height="28dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/ccv_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/creditOrDebitCardNumberInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/ccvInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="140dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_lock_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ccv">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/ccvInput"
+                android:layout_width="140dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="textPassword"
+                android:maxLength="3"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //VALID THRU
+        <TextView
+            android:id="@+id/validThru"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/valid_thru_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/ccv"
+            app:layout_constraintTop_toBottomOf="@+id/creditOrDebitCardNumberInputLayout"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/validThruInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="170dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_date_range_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toEndOf="@+id/ccvInputLayout"
+            app:layout_constraintTop_toBottomOf="@+id/ccv" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/validThruInput"
+                android:layout_width="170dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="date"
+                android:hint="@string/hint_valid_thru"
+                android:maxLength="5"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //AMOUNT DONATE (RM)
+        <TextView
+            android:id="@+id/amountDonate"
+            android:layout_width="185dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/amount_donate_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ccvInputLayout" />
+
+
+        <RadioGroup
+            android:id="@+id/rgrpAmountDonated"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/amountDonate">
+
+            <RadioButton
+                android:id="@+id/radTenRinggitInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/donation_ten_ringgit_header" />
+
+            <RadioButton
+                android:id="@+id/radTwentyRinggitInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/donation_twenty_ringgit_header"/>
+
+            <RadioButton
+                android:id="@+id/radFiftyRinggitInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/donation_fifty_ringgit_header"/>
+
+            <RadioButton
+                android:id="@+id/radOneHundredRinggitInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/donation_one_hundred_ringgit_header"/>
+
+            <RadioButton
+                android:id="@+id/radTwoHundredRinggitInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/donation_two_hundred_ringgit_header"/>
+
+            <RadioButton
+                android:id="@+id/radOtherAmountInput"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:text="@string/donation_other_amount_header"/>
+        </RadioGroup>
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/radAmountDonateInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginEnd="20dp"
+            android:visibility="gone"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_date_range_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:prefixText="RM"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rgrpAmountDonated">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/radAmountDonateInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="numberDecimal"
+                android:hint="@string/hint_amount_donation"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //LEAVE A COMMENT
+        <TextView
+            android:id="@+id/leaveCommentHeader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/leave_a_comment_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/radAmountDonateInputLayout" />
+
+        <CheckBox
+            android:id="@+id/leaveComment"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@string/comment_section_header"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leaveCommentHeader"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/leaveCommentInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            android:textAlignment="textStart"
+            android:visibility="gone"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/outline_description_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leaveComment">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/leaveCommentInput"
+                android:layout_width="320dp"
+                android:layout_height="100dp"
+                android:background="@color/light_green_BAEFC9"
+                android:hint="@string/hint_checked_help_others_box"
+                android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+                android:maxLength="100"
+                android:textColorHint="@color/grey_616161"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+
+        //DONATE
+        <Button
+            android:id="@+id/donationButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="120dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:backgroundTint="@color/purple_9C68EA"
+            android:text="@string/donate_button_header"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leaveCommentInputLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

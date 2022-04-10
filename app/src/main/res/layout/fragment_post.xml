@@ -1,14 +1,187 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostFragment">
+    android:fillViewport="true"
+    tools:context=".Post.PostFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        tools:context=".Post.PostFragment">
 
-</FrameLayout>
+
+        //POST TITLE
+        <TextView
+            android:id="@+id/postTitle"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/post_title_header"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/postTitleInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/outline_person_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postTitle">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/postTitleInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/light_green_BAEFC9"
+                android:hint="@string/hint_post_title"
+                android:textColorHint="@color/grey_616161"
+                android:textStyle="bold"
+                android:inputType="text|textCapSentences|textAutoComplete|textMultiLine" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //POST CONTENT
+        <TextView
+            android:id="@+id/postContent"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/post_content_header"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postTitleInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/postContentInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/outline_person_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postContent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/postContentInput"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:background="@color/light_green_BAEFC9"
+                android:hint="@string/hint_post_content"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:inputType="text|textCapSentences|textAutoComplete|textMultiLine"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //POST IMAGE
+        <ImageView
+            android:id="@+id/postImageView"
+            android:background="@color/light_green_BAEFC9"
+            android:layout_width="140dp"
+            android:layout_height="140dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postContentInputLayout"
+            tools:src="@tools:sample/avatars" />
+
+
+        //UPLOAD PHOTO BUTTON
+        <Button
+            android:id="@+id/uploadPhoto"
+            android:layout_width="160dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="70dp"
+            android:backgroundTint="@color/purple_200"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/upload_photo_header"
+            android:textStyle="bold"
+            app:icon="@drawable/outline_photo_library_black_18"
+            app:iconGravity="textStart"
+            app:iconTint="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/postImageView"
+            app:layout_constraintTop_toBottomOf="@+id/postContentInputLayout" />
+
+
+        //POST BUTTON
+        <Button
+            android:id="@+id/postButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="200dp"
+            android:backgroundTint="@color/purple_200"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/post_header"
+            android:textStyle="bold"
+            app:icon="@drawable/outline_add_circle_outline_black_18"
+            app:iconGravity="textStart"
+            app:iconTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postImageView" />
+
+        <Button
+            android:id="@+id/dwButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="200dp"
+            android:backgroundTint="@color/purple_200"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/post_header"
+            android:textStyle="bold"
+            app:icon="@drawable/outline_add_circle_outline_black_18"
+            app:iconGravity="textStart"
+            app:iconTint="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/postButton" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

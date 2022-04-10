@@ -22,7 +22,6 @@ data class Post(
     var user: User = User(),
     @get: Exclude
     var comments : List<Comment> = emptyList()
-
     /*
     var likeCount   : Int,
     var commentCount: Int,
@@ -55,6 +54,10 @@ data class Donation(
     var donationId: String = "",
     var donationAmount: Double = 0.0,
     var donationDate: Date = Date(),
+    var donationCreditOrDebitCardNumberInput : String = "",
+    var donationCCVInput : String = "",
+    var donationAmountDonatedInput : String = "",
+    var donationLeaveComment : String = ""
     var userEmail: String = "",
     var user: User = User()
 )
@@ -65,4 +68,40 @@ data class News(
     var newsDate: Date = Date(),
     var newsText: String = "",
     var newsPhoto: Int = R.drawable.icons8_kawaii_rice_90
+)    
+
+//REGISTER FOR VOLUNTEER DATA
+data class RegisterForVolunteer(
+    @DocumentId
+    var registerForVolunteerNameInput : String = "",
+    var registerForVolunteerIdentificationNumberInput : String = "",
+    var registerForVolunteerEmailAddressInput : String = "",
+    var registerForVolunteerPhoneNumberInput : String = "",
+    var registerForVolunteerAddressInput : String = "",
+    var registerForVolunteerStateInput : String = "",
+    var registerForVolunteerPostalOrZipCodeInput : String = "",
+    var registerForVolunteerReasonToVolunteer : String = "",
+    var registerForVolunteerDate : Date = Date()
+)
+
+
+//REQUEST FOR HELP DATA
+data class RequestForHelp(
+    @DocumentId
+    var requestForHelpNameInput : String = "",
+    var requestForHelpIdentificationNumberInput : String = "",
+    var requestForHelpEmailAddressInput : String = "",
+    var requestForHelpPhoneNumberInput : String = "",
+    var requestForHelpAddressInput : String = "",
+    var requestForHelpStateInput : String = "",
+    var requestForHelpPostalOrZipCodeInput : String = "",
+    var requestForHelpTypeOfHelpRequired : Int = 0,
+    var requestForHelpDate : Date = Date()
+)
+
+data class ContactUs(
+    @DocumentId
+    var name: String = "",
+    var email: String = "",
+    var message: String = ""
 )

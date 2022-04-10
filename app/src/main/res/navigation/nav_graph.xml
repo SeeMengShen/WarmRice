@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@+id/loginFragment">
+    app:startDestination="@id/aboutUsFragment2">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -78,4 +78,29 @@
         android:id="@+id/userProfileFragment"
         android:name="com.example.warmrice.Home.UserProfileFragment"
         android:label="User Profile" />
+  <fragment
+        android:id="@+id/postFragment"
+        android:name="com.example.warmrice.Post.PostFragment"
+        android:label="@string/add_post_header"
+        tools:layout="@layout/fragment_post" />
+    <fragment
+        android:id="@+id/helpServiceFragment"
+        android:name="com.example.warmrice.HelpService.HelpServiceFragment"
+        android:label="@string/help_service"
+        tools:layout="@layout/fragment_help_service" />
+    <fragment
+        android:id="@+id/registerVolunteerFragment"
+        android:name="com.example.warmrice.HelpService.RegisterVolunteerFragment"
+        android:label="@string/registration_for_volunteer_header_option"
+        tools:layout="@layout/fragment_register_volunteer" />
+    <fragment
+        android:id="@+id/requestHelpFragment"
+        android:name="com.example.warmrice.HelpService.RequestHelpFragment"
+        android:label="@string/request_for_help_header_option"
+        tools:layout="@layout/fragment_request_help" />
+    <fragment
+        android:id="@+id/donateFragment"
+        android:name="com.example.warmrice.HelpService.DonateFragment"
+        android:label="@string/donate_header_option"
+        tools:layout="@layout/fragment_donate" />
 </navigation>
