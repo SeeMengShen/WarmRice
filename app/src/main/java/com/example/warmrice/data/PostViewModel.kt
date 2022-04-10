@@ -54,6 +54,19 @@ class PostViewModel : ViewModel() {
             }!!
         }
     }
+
+    //VALIDATION OF POST DETAILS
+    fun validatePost(post: Post, insert: Boolean = true): String {
+        var errorAddPost = ""
+
+        errorAddPost += if (post.postTitle.isNullOrEmpty()) "Invalid. Title is required.\n"
+        else ""
+
+        errorAddPost += if (post.postPhoto.toBytes().isEmpty()) "Invalid. Photo is required.\n"
+        else ""
+
+        return errorAddPost
+    }
 }
 
 

@@ -12,7 +12,8 @@ data class Post(
     var postText: String = "",
     var userEmail: String = "",
     var user: User = User(),
-    var date: Date = Date()
+    var postDate: Date = Date(),
+    var postPhoto:Blob = Blob.fromBytes(ByteArray(0))
     /*
     var postImageUrl: String,
     var likeCount   : Int,
@@ -33,13 +34,43 @@ data class Donation(
     @DocumentId
     var donationId: String = "",
     var donationAmount: Double = 0.0,
-    var donationDate: Date = Date()
+    var donationDate: Date = Date(),
+    var donationCreditOrDebitCardNumberInput : String = "",
+    var donationCCVInput : String = "",
+    var donationAmountDonatedInput : String = "",
+    var donationLeaveComment : String = ""
 )
 
-data class AddPost(
+
+//REGISTER FOR VOLUNTEER DATA
+data class RegisterForVolunteer(
     @DocumentId
-    var addPostTitle : String = "",
-    var addPostContent : String = "",
-    var addPostUploadPhoto: Blob = Blob.fromBytes(ByteArray(0)),
-    var addPostDate : Date = Date()
+    var registerForVolunteerNameInput : String = "",
+    var registerForVolunteerIdentificationNumberInput : String = "",
+    var registerForVolunteerEmailAddressInput : String = "",
+    var registerForVolunteerPhoneNumberInput : String = "",
+    var registerForVolunteerAddressInput : String = "",
+    var registerForVolunteerStateInput : String = "",
+    var registerForVolunteerPostalOrZipCodeInput : String = "",
+    var registerForVolunteerReasonToVolunteer : String = "",
+    var registerForVolunteerDate : Date = Date()
 )
+
+
+//REQUEST FOR HELP DATA
+data class RequestForHelp(
+    @DocumentId
+    var requestForHelpNameInput : String = "",
+    var requestForHelpIdentificationNumberInput : String = "",
+    var requestForHelpEmailAddressInput : String = "",
+    var requestForHelpPhoneNumberInput : String = "",
+    var requestForHelpAddressInput : String = "",
+    var requestForHelpStateInput : String = "",
+    var requestForHelpPostalOrZipCodeInput : String = "",
+    var requestForHelpTypeOfHelpRequired : Int = 0,
+    var requestForHelpDate : Date = Date()
+)
+
+
+
+

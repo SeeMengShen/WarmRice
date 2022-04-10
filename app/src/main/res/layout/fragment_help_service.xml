@@ -1,14 +1,83 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HelpServiceFragment">
+    tools:context=".HelpService.HelpServiceFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        tools:context=".HelpService.HelpServiceFragment">
+
+
+        //REGISTRATION FOR VOLUNTEER
+        <Button
+            android:id="@+id/buttonRegistrationForVolunteerOption"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/purple_9C68EA"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/registration_for_volunteer_header_option"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:icon="@drawable/outline_navigate_next_black_18"
+            app:iconGravity="end"
+            app:layout_constraintBottom_toTopOf="@+id/buttonDonateOption"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        //DONATE
+        <Button
+            android:id="@+id/buttonDonateOption"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/purple_9C68EA"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/donate_header_option"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20sp"
+            app:icon="@drawable/outline_navigate_next_black_18"
+            app:iconGravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRegistrationForVolunteerOption" />
+
+
+        //REQUEST FOR HELP
+        <Button
+            android:id="@+id/buttonRequestForHelpOption"
+            android:layout_width="330dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:backgroundTint="@color/purple_9C68EA"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/request_for_help_header_option"
+            android:textStyle="bold"
+            android:textAlignment="viewStart"
+            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
+            android:textSize="20sp"
+            app:icon="@drawable/outline_navigate_next_black_18"
+            app:iconGravity="end"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buttonDonateOption"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </FrameLayout>

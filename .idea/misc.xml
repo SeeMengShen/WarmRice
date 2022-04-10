@@ -13,8 +13,17 @@
         <entry key="..\:/School Mobile Dev/WarmRice/app/src/main/res/layout/fragment_login.xml" value="0.33" />
         <entry key="..\:/School Mobile Dev/WarmRice/app/src/main/res/layout/fragment_organization.xml" value="0.36666666666666664" />
         <entry key="..\:/School Mobile Dev/WarmRice/app/src/main/res/layout/fragment_register.xml" value="0.36666666666666664" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/drawable/background_rectangle_donate.xml" value="0.1" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/drawable/background_rectangle_donate_chosen.xml" value="0.1" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/activity_login.xml" value="0.1" />
         <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_donate.xml" value="0.23958333333333334" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_help_service.xml" value="0.144" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_post.xml" value="0.264" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_post_details.xml" value="0.264" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_register_volunteer.xml" value="0.24003623188405798" />
+        <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/layout/fragment_request_help.xml" value="0.2" />
         <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/menu/account_top_action_bar.xml" value="0.1" />
         <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/menu/bottom_nav.xml" value="0.1" />
         <entry key="..\:/Users/2002c/AndroidStudioProjects/WarmRice/app/src/main/res/menu/home_top_action_bar.xml" value="0.1" />

@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val appBarConfiguration =
-            AppBarConfiguration(setOf(R.id.homeFragment, R.id.postFragment, R.id.accountFragment))
+            AppBarConfiguration(setOf(R.id.homeFragment, R.id.helpServiceFragment, R.id.postFragment, R.id.accountFragment))
         bottomNav = binding.bottomNav
 
         setupActionBarWithNavController(nav, appBarConfiguration)
