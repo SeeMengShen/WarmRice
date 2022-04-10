@@ -41,7 +41,6 @@ data class Donation(
     var donationLeaveComment : String = ""
 )
 
-
 //REGISTER FOR VOLUNTEER DATA
 data class RegisterForVolunteer(
     @DocumentId
@@ -71,6 +70,9 @@ data class RequestForHelp(
     var requestForHelpDate : Date = Date()
 )
 
-
-
-
+data class ContactUs(
+    @DocumentId
+    var name: String = "",
+    var email: String = "",
+    var message: String = ""
+)
