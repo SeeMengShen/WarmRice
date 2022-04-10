@@ -9,7 +9,7 @@
     <!-- TODO: Update blank fragment layout -->
 
     <ImageView
-        android:id="@+id/userPhotoView"
+        android:id="@+id/userProfileUserPhotoImageView"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:layout_marginStart="16dp"
@@ -23,13 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toBottomOf="@+id/userPhotoView"
+        app:layout_constraintBottom_toBottomOf="@+id/userProfileUserPhotoImageView"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/userPhotoView"
-        app:layout_constraintTop_toTopOf="@+id/userPhotoView">
+        app:layout_constraintStart_toEndOf="@+id/userProfileUserPhotoImageView"
+        app:layout_constraintTop_toTopOf="@+id/userProfileUserPhotoImageView">
 
         <TextView
-            android:id="@+id/usernameView"
+            android:id="@+id/userProfileUsernameView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Username"
@@ -37,20 +37,20 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/userEmailView"
+            android:id="@+id/userProfileUserEmailView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Email:" />
 
         <TextView
-            android:id="@+id/dateJoinedView"
+            android:id="@+id/userProfileDateJoinedView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date joined: " />
     </LinearLayout>
 
     <TextView
-        android:id="@+id/biosView"
+        android:id="@+id/userProfileBioView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -59,7 +59,7 @@
         android:text="Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios Bios "
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/userPhotoView" />
+        app:layout_constraintTop_toBottomOf="@+id/userProfileUserPhotoImageView" />
 
     <LinearLayout
         android:layout_width="0dp"
@@ -72,15 +72,15 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/biosView">
+        app:layout_constraintTop_toBottomOf="@+id/userProfileBioView">
 
         <com.google.android.material.tabs.TabLayout
-            android:id="@+id/accountTabLayout"
+            android:id="@+id/userProfileTabLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <androidx.viewpager2.widget.ViewPager2
-            android:id="@+id/accountViewPager"
+            android:id="@+id/userProfileViewPager"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

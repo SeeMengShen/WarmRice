@@ -6,10 +6,10 @@
     app:startDestination="@id/aboutUsFragment2">
 
     <fragment
-    android:id="@+id/loginFragment"
-    android:name="com.example.warmrice.Login.LoginFragment"
-    android:label="fragment_login"
-    tools:layout="@layout/fragment_login" />
+        android:id="@+id/loginFragment"
+        android:name="com.example.warmrice.Login.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
 
     <fragment
         android:id="@+id/forumFragment"
@@ -40,19 +40,45 @@
     <fragment
         android:id="@+id/forgetPasswordFragment"
         android:name="com.example.warmrice.Login.ForgetPasswordFragment"
-        android:label="fragment_forget_password"
+        android:label="Forget Password"
         tools:layout="@layout/fragment_forget_password" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.example.warmrice.Login.RegisterFragment"
-        android:label="fragment_register"
+        android:label="Register"
         tools:layout="@layout/fragment_register" />
     <fragment
-        android:id="@+id/aboutUsFragment2"
+        android:id="@+id/aboutUsFragment"
         android:name="com.example.warmrice.AboutUs.AboutUsFragment"
-        android:label="fragment_about_us"
+        android:label="About Us"
         tools:layout="@layout/fragment_about_us" />
     <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.example.warmrice.Account.SettingsFragment"
+        android:label="Settings" />
+    <fragment
+        android:id="@+id/editProfileFragment"
+        android:name="com.example.warmrice.Account.EditProfileFragment"
+        android:label="Edit Profile" />
+    <fragment
+        android:id="@+id/changeLanguageFragment"
+        android:name="com.example.warmrice.Account.ChangeLanguageFragment"
+        android:label="Change Language" />
+    <fragment
+        android:id="@+id/newsDetailsFragment"
+        android:name="com.example.warmrice.Home.NewsDetailsFragment"
+        android:label="News Details"
+        tools:layout="@layout/fragment_news_details" />
+    <fragment
+        android:id="@+id/searchFragment"
+        android:name="com.example.warmrice.Home.SearchFragment"
+        android:label="@string/search"
+        tools:layout="@layout/fragment_search" />
+    <fragment
+        android:id="@+id/userProfileFragment"
+        android:name="com.example.warmrice.Home.UserProfileFragment"
+        android:label="User Profile" />
+  <fragment
         android:id="@+id/postFragment"
         android:name="com.example.warmrice.Post.PostFragment"
         android:label="@string/add_post_header"

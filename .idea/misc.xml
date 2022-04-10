@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+
         <entry key="..\:/School Mobile Dev/WarmRice/app/src/main/res/drawable/baseline_volunteer_activism_24.xml" value="0.3675" />
         <entry key="..\:/School Mobile Dev/WarmRice/app/src/main/res/drawable/button_custom.xml" value="0.3675" />
         <entry key="..\:/School Mobile Dev/WarmRice/app/src/main/res/drawable/button_design.xml" value="0.3675" />
@@ -39,38 +40,53 @@
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/baseline_volunteer_activism_24.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/ic_baseline_home_24.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/ic_baseline_info_24.xml" value="0.2125" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/ic_baseline_keyboard_arrow_right_24.xml" value="0.2595" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/ic_baseline_search_24.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/ic_baseline_settings_24.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/ic_baseline_star_border_24.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/outline_forum_24.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/outline_star_border_24_1_.xml" value="0.2125" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/outline_thumb_up_24.xml" value="0.2125" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/textview_border.xml" value="0.2595" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/drawable/warm_rice_image.xml" value="0.2595" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/activity_login.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/activity_main.xml" value="0.24010416666666667" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/comment_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/donation_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_about_us.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_account.xml" value="0.264" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_account_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_account_donation.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_account_favourited_posts.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_account_posts.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_account_posts2.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_change_language.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_donate.xml" value="0.25416666666666665" />
-        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_edit_profile.xml" value="0.13496376811594202" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_edit_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_favourited_posts.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_forum.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_help_service.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_home.xml" value="0.22592592592592592" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_login.xml" value="0.18177083333333333" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_news.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_news_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_post.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_post_details.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_register_volunteer.xml" value="0.13496376811594202" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_request_help.xml" value="0.13496376811594202" />
-        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_search.xml" value="0.13496376811594202" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_search.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_search_post.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_search_user.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_settings.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/fragment_user_profile.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/news_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/post_item.xml" value="0.25" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/test_item.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/layout/user_item.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/menu/account_top_action_bar.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/menu/bottom_comment_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/menu/bottom_nav.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/menu/home_top_action_bar.xml" value="0.25416666666666665" />
         <entry key="..\:/Users/mengs/Desktop/WarmRice/app/src/main/res/menu/top_action_bar.xml" value="0.25416666666666665" />
       </map>
     </option>

@@ -34,18 +34,21 @@ class AccountFavouritedPostsFragment : Fragment() {
             }
             holder.postUsernameView.setOnClickListener {
                 //TODO: if same with own id then go to account instead of viewAccountFragment
-                nav.navigate(R.id.accountFragment, bundleOf("userId" to post.user.userEmail))
+                nav.navigate(R.id.userProfileFragment, bundleOf("userEmail" to post.user.userEmail))
+            }
+            holder.postUserPhotoView.setOnClickListener {
+                nav.navigate(R.id.userProfileFragment, bundleOf("userEmail" to post.user.userEmail))
+            }
+            holder.postCommentBtn.setOnClickListener {
+                nav.navigate(R.id.postDetailsFragment, bundleOf("postId" to post.postId, "goToComment" to true))
             }
         }
 
         binding.accountFavouritedPostsRv.adapter = adapter
         binding.accountFavouritedPostsRv.addItemDecoration(DividerItemDecoration(context, DividerItemDecoration.VERTICAL))
 
-        uvm.getAll().observe(viewLifecycleOwner) { posts ->
-        }
-
         pvm.getAll().observe(viewLifecycleOwner){ posts ->
-            pvm.assignUser(posts)
+//            pvm.assignUser(posts)
             adapter.submitList(posts)
         }
 

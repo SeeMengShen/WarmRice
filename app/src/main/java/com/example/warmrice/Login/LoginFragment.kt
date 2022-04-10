@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import com.example.warmrice.R
+import com.example.warmrice.databinding.ActivityMainBinding
 import com.example.warmrice.databinding.FragmentForgetPasswordBinding
 import com.example.warmrice.databinding.FragmentLoginBinding
 import com.google.firebase.auth.FirebaseAuth
