@@ -45,7 +45,7 @@ class PostAdapter(val fn: (ViewHolder, Post) -> Unit /*= { _, _ ->}*/ ): ListAda
         holder.postTitleView.text = post.postTitle
         holder.postUserPhotoView.setImageBitmap(post.user.userPhoto?.toBitmap())
         holder.postUsernameView.text = post.user.username
-        holder.postDateView.text = formatter.format(post.date)
+        holder.postDateView.text = formatter.format(post.postDate)
         holder.postContentView.text = post.postText
 
         fn(holder, post)

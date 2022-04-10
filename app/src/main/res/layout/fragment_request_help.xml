@@ -1,14 +1,488 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RequestHelpFragment">
+    android:fillViewport="true"
+    tools:context=".HelpService.RequestHelpFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_height="wrap_content"
+        android:background="@color/light_orange_75FFEB3B"
+        tools:context=".HelpService.RequestHelpFragment">
 
-</FrameLayout>
+
+        //REQUEST HELP HEADER
+        <TextView
+            android:id="@+id/helpRequestDetail"
+            android:layout_width="210dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/archivo_black"
+            android:text="@string/request_detail_header"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        //NAME
+        <TextView
+            android:id="@+id/helpName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/name_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpRequestDetail" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpNameInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/outline_person_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpName">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpNameInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_name"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="textMultiLine|textCapSentences|textAutoCorrect"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //IDENTIFICATION NUMBER
+        <TextView
+            android:id="@+id/helpIdentificationNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/identification_number_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpNameInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpIdentificationNumberInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_person_black_24dp"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpIdentificationNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpIdentificationNumberInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_identification_number"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="textUri|number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //EMAIL ADDRESS
+        <TextView
+            android:id="@+id/helpEmailAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/email_address_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpIdentificationNumberInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpEmailAddressInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_mail_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpEmailAddress">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpEmailAddressInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_email_address"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="textMultiLine|textAutoCorrect|textCapSentences|textAutoComplete|textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //PHONE NUMBER
+        <TextView
+            android:id="@+id/helpPhoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/phone_number_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpEmailAddressInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpPhoneNumberInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_phone_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpPhoneNumber">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpPhoneNumberInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_phone_number"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="phone" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //ADDRESS
+        <TextView
+            android:id="@+id/helpAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/address_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpPhoneNumberInputLayout" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpAddressInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_place_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpAddress">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpAddressInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_address"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="textMultiLine|textAutoCorrect|textCapSentences|textPostalAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //STATE
+        <TextView
+            android:id="@+id/helpState"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/state_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpAddressInputLayout" />
+
+        <Spinner
+            android:id="@+id/helpStateInput"
+            android:background="@drawable/style_spinner"
+            android:layout_width="320dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:entries="@array/state"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpState" />
+
+
+        //POSTAL OR ZIP CODE
+        <TextView
+            android:id="@+id/helpPostalOrZipCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/postal_or_zip_code_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpStateInput" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpPostalOrZipCodeInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:startIconDrawable="@drawable/outline_place_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperText="@string/required_keyword"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpPostalOrZipCode">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpPostalOrZipCodeInput"
+                android:layout_width="320dp"
+                android:layout_height="wrap_content"
+                android:hint="@string/hint_postal_or_zip_code"
+                android:textStyle="bold"
+                android:textColorHint="@color/grey_616161"
+                android:background="@color/light_green_BAEFC9"
+                android:inputType="number"
+                android:maxLength="5"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //TYPE OF HELP REQUIRED
+        <TextView
+            android:id="@+id/helpTypeOfHelpRequired"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/type_of_help_required_header"
+            android:textSize="19sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpPostalOrZipCodeInputLayout" />
+
+        <CheckBox
+            android:id="@+id/helpClothes"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@string/checked_help_clothes"
+            android:checked="true"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpTypeOfHelpRequired"/>
+
+        <CheckBox
+            android:id="@+id/helpFoods"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@string/checked_help_foods"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpClothes"/>
+
+        <CheckBox
+            android:id="@+id/helpOthers"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:text="@string/checked_help_others"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpFoods"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/helpOthersInputLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense"
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="20dp"
+            android:baselineAligned="false"
+            android:textAlignment="textStart"
+            android:visibility="gone"
+            app:boxStrokeColor="@color/purple_9C68EA"
+            app:counterEnabled="true"
+            app:startIconDrawable="@drawable/outline_description_black_18"
+            app:startIconTint="@color/black"
+            app:endIconMode="clear_text"
+            app:endIconTint="@color/red_FF0000"
+            app:errorEnabled="true"
+            app:errorIconDrawable="@drawable/outline_error_black_24dp"
+            app:errorIconTint="@color/red_FF0000"
+            app:helperTextTextColor="@color/red_FF0000"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpOthers">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/helpOthersInput"
+                android:layout_width="320dp"
+                android:layout_height="150dp"
+                android:background="@color/light_green_BAEFC9"
+                android:hint="@string/hint_checked_help_others_box"
+                android:inputType="textMultiLine|textCapSentences|textAutoCorrect"
+                android:maxLength="80"
+                android:textColorHint="@color/grey_616161"
+                android:textStyle="bold" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        //RESET
+        <Button
+            android:id="@+id/helpResetButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/reset_button"
+            android:textStyle="bold"
+            android:backgroundTint="@color/purple_9C68EA"
+            app:layout_constraintEnd_toStartOf="@+id/helpSubmitButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/helpOthersInputLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+        //SUBMIT
+        <Button
+            android:id="@+id/helpSubmitButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:fontFamily="@font/kaushan_script"
+            android:text="@string/submit_button"
+            android:textStyle="bold"
+            android:backgroundTint="@color/purple_9C68EA"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/helpResetButton"
+            app:layout_constraintTop_toBottomOf="@+id/helpOthersInputLayout"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

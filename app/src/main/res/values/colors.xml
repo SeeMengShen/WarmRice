@@ -11,4 +11,13 @@
     <color name="light_grey">#D3D3D3</color>
     <color name="purple_9C68EA">#9C68EA</color>
     <color name="purple_B995EF">#B995EF</color>
+
+    //Calvin add
+    <color name="grey_616161">#616161</color>
+    <color name="red_FF0000">#FF0000</color>
+    <color name="light_green_77FF48">#77FF48</color>
+    <color name="dark_green_3BA814">#3BA814</color>
+    <color name="grey_DADADA">#DADADA</color>
+    <color name="light_orange_75FFEB3B">#75FFEB3B</color>
+    <color name="light_green_BAEFC9">#BAEFC9</color>
 </resources>
